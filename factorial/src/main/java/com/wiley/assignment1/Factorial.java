@@ -1,5 +1,7 @@
 package com.wiley.assignment1;
 
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
 import java.io.InputStream;
 import java.io.PrintStream;
 import java.util.Scanner;
@@ -34,12 +36,22 @@ public class Factorial {
 		*/
 
 		//YOUR CODE STARTS HERE
-
-		return -1;
-
+		 //Use of a try-catch block in order to catch non-number user inputs.
+		 try{
+			 num = Integer.parseInt(scanner.nextLine());
+			 //If the number is not within the inclusive 1 to 10 range print the error message and return -1.
+			 if(num < 1 || num > 10) {
+				 this.printStream.print("Invalid entry. Please enter an integer between 1 and 10, inclusive.");
+				 return -1;
+			 }
+			 return num;
+		 }
+		 //If the user input is not a number, print the error message.
+		 catch(NumberFormatException e){
+			 this.printStream.print("Invalid entry. Please enter an integer between 1 and 10, inclusive.");
+		 }
+		 return -1;
 		//YOUR CODE ENDS HERE
-		 
-			
 	 }
 	
 	 
@@ -53,12 +65,12 @@ public class Factorial {
 		 
 		int result = 1;
 		//YOUR CODE STARTS HERE
-
- 
-
+		 //Multiply all numbers in the range from 1 to num together and store in result.
+		 for (int i = 1; i <= num; i++) {
+			 result *= i;
+		 }
 		//YOUR CODE ENDS HERE
-		this.printStream.print("The Factorial is: " + result);		
-		
+		this.printStream.print("The Factorial is: " + result);
 	 }
 	 
 	 public void calculateFactorial() {
@@ -81,8 +93,10 @@ public class Factorial {
 		 */
 		Factorial fact = new Factorial(System.in,System.out);
 		System.out.println("Enter an integer between 1 and 10, inclusive.");
-		fact.calculateFactorial();	
+		fact.calculateFactorial();
 	 }
 
-	
+
+
+
 }
