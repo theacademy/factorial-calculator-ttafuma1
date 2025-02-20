@@ -20,7 +20,6 @@ public class Factorial {
 	 }
 	 
 	 public int isInputNumberValid()  {
-		 
 		/*
 		- Update this method to accept a number from the user and store the value in an instance variable `num`. 
 			- Use an instance variable `scanner` to accept the input from the user.
@@ -56,13 +55,11 @@ public class Factorial {
 	
 	 
 	 private void calculateFactorial(int num) {
-		
-		  /*
+		 /*
 		  Use this method to calculate the factorial of the number input by the user.
 		  
 		  - All code should be inside the placeholders below.
-		*/
-		 
+		 */
 		int result = 1;
 		//YOUR CODE STARTS HERE
 		 //Multiply all numbers in the range from 1 to num together and store in result.
@@ -77,13 +74,11 @@ public class Factorial {
 		 /*
 		 Do not change this method.
 		 */
-		 	
 		 int input = this.isInputNumberValid();
 		 if(input != -1)
 		 {
 			 calculateFactorial(input);
 		 }
-		 
 	 }
 	
 
